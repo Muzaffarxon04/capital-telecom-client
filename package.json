@@ -1,0 +1,29 @@
+{
+  "name": "capital-telecom-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev   -p 3025",
+    "build": "next build",
+    "start": "next start -p 3025",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "next": "13.4.13",
+    "next-seo": "^6.1.0",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-phone-input-2": "^2.15.1",
+    "react-redux": "^8.1.2",
+    "redux-persist": "^6.0.0",
+    "sharp": "^0.32.5",
+    "swiper": "^10.1.0",
+    "tailwindcss": "3.3.3"
+  }
+}

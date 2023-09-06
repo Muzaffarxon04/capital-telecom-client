@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.container{
+  overflow: hidden !important;
+}
+
+.active-link{
+  color: #55B25B !important;
+}
+
+.card {
+  height: 300px !important;
+  margin-top: 32px !important;
+  transition: height 1s ease, all 1s ease;
+  box-shadow: 5px 5px 5px 0px #170F490D ;
+  /* Apply transitions to both transform and other properties */
+}
+
+.image-box {
+  transition: height 1s ease, background-color 0.5s ease;
+  /* Apply transitions to height and background-color */
+}
+
+.image {
+  transition: height 1s ease;
+  /* Apply transition to height */
+}
+
+.card-text,
+.card-title {
+  transition: display 0.5s ease;
+  /* Apply transition to display property */
+}
+
+.shadow-mds{
+box-shadow: 0px 4px 4px 0px #55B25B1A !important;
+}
+
+.card:hover  {
+  transition: height 0.5s ease;
+  height: 367px !important;
+margin-top: 0 !important; 
+}
+
+.card:hover .image-box {
+  height: 168px;
+  border-radius: 15px;
+  /* New height when hovered */
+  /* Change the background color when hovered */
+}
+
+.card:hover .image {
+  height: 168px;
+  /* New height for image when hovered */
+}
+
+.card:hover .card-title {
+  display: none;
+  /* Hide the title when hovered */
+}
+
+.card:hover .card-text {
+  display: block;
+  /* Show the text when hovered */
+}
+
+
+
+.swiper-pagination-bullet {
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #55B25B !important;
+}
+
+
+
+.students .swiper-pagination{
+  position: absolute !important;
+  top: 428px !important;
+}
+
+.active-page-btn{
+  width: 40px;
+  border-radius: 50%;
+    height: 40px;
+    color: #fff;
+    background: #55B25B;
+}
+
+.header-container{
+  overflow: visible !important;
+}
+
+.bg-university-intro{
+  background: url('/black-shape.png'), url('/university.png'), #2E2E2E;
+  background-size: 69% auto, 36% 520px;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-position: left, right;
+}
+
+.bg-mountain-background {
+  background: url('/students-intro-image.png') no-repeat top center ;
+  background-size: cover;
+}
+
+.bg-about-background {
+  background: url('/about-bg.png') no-repeat top center, #ffffff;
+  background-size: cover;
+}
+
+.bg-start-background{
+    background: url('/bg-start-background.png') no-repeat top center, #ffffff;
+    background-size: cover;
+}
+
+.bg-faq-background {
+  background: url('/bg-faq.png') no-repeat top center, #ffffff;
+  background-size: cover;
+}
+
+.bg-yourdream-background {
+  background: url('/shape-yourdream.png') no-repeat center, #ffffff;
+  background-size: auto;
+
+}
+
+.bg-clients-background {
+  background: url('/bg-shape2.png') no-repeat center, rgba(241, 242, 254, 0.30);;
+  background-size: auto;
+
+}
+.bg-students-background {
+  background: url('/bg-retangle.png') no-repeat   center , #fff;
+  ;
+  background-position-y: 325px !important;
+  background-size: auto;
+
+}
+
+.bg-china-unver{
+background: url('/egyp-univer.png') no-repeat center;
+  background-size: cover;
+}
+
+
+.bg-contact-box{
+background: url('/bg-box.png') no-repeat center;
+  background-size: cover;
+}
+
+.bg-contact-box-send {
+  position: relative;
+overflow: hidden;
+}
+
+.bg-contact-box-send::before {
+  position: absolute;
+ content:'';
+  right:220px;
+   bottom:0;
+   width:274px; 
+   height:116px;
+  background: url('/letter_send.png') no-repeat top center;
+  background-size: cover;
+  transform: rotate(-10deg);
+}
