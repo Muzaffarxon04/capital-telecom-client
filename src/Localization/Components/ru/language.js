@@ -11,6 +11,9 @@ const header = {
       contacts: "Контакты",
       popular: "Популярные направления",
       sections: "Разделы",
+      for_home: "Для дома",
+      for_business: "Для бизнеса",
+      add_service:"Additional services",
       address: "Город Ташкент, Яшнабадский район, улица Карасув, 33А",
    },
    intro: {

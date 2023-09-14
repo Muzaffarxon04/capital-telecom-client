@@ -8,8 +8,11 @@ const header = {
       universities: "Universitetlar",
       reviews: "Sharhlar",
       contacts: "Kontaktlar",
+      add_service: "Additional services",
       popular: "Mashhur yo'nalishlar",
-      sections: "Bo'limlar",
+      sections: "Ofis uchun",
+      for_home: "Uy Uchun",
+      for_business: "For Business",
       address: "Toshkent shahar Yashnobod tumani Qorasuv kochasi, 33A binosi",
    },
 

@@ -3,12 +3,15 @@ const header = {
    apply_university: "Apply for university",
 
    header: {
-      aboutus: "About us",
-      serivses: "Our services",
-      faq: "FAQ",
+      aboutus: "About",
+      serivses: "Tarifs",
+      faq: "Why choosing us",
       universities: "Universities",
       reviews: "Reviews",
-      contacts: "Contacts",
+      contacts: "Lead sending",
+      for_home: "For Home",
+      for_business: "For Business",
+      add_service: "Additional services",
       popular: "Popular destinations",
       sections: "Sections",
       address:
@@ -16,10 +19,10 @@ const header = {
    },
 
    intro: {
-      title: "Are you dreaming of studying abroad?",
-      bunda: "",
+      title: "Want anything to be easy with",
+      bunda: " Provide a network for all your needs with ease and fun using ",
       subtitle:
-         "can help you turn that dream into a reality! Sign up now for a free consultation.",
+         " discover interesting features from us.",
       btn: "Free consultation",
       btn2: "About services",
    },
@@ -65,8 +68,9 @@ const header = {
    },
 
    dream: {
-      title: "Enter the University of your dream with COMPERA",
-      subtitle: "and be a high-paying specialist in your field!",
+      title: "Choose Your Plan",
+      subtitle:
+         "Let's choose the package that is best for you and explore it happily and cheerfully.",
       subtitle2:
          "By clicking on the button, you agree to the processing of personal data and the Privacy Policy.",
       name: "Name",

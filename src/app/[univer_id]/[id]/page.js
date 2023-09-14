@@ -1,17 +1,13 @@
 "use client";
-import Intro from "@/components/sections/universities/IntroSecond";
 import { data } from "@/data";
 
 import YourDream from "@/components/sections/YourDream";
 import OurClients from "@/components/sections/OurClients";
-import ImageSlider from "@/components/sections/universities/ImageSlider";
 export default function UniversityPage({ params }) {
    const filteredData = data.find((item) => item?.id == params?.id);
 
    return (
       <div className="mt-[85px] pb-[50px]">
-         <Intro data={filteredData} />
-         <ImageSlider />
          <div className=" container mx-auto  flex items-center justify-between">
             <section className="w-full">
                <h3 className="my-[50px] text-[34px] font-[700] text-[#2E2E2E]">

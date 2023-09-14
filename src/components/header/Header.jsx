@@ -50,7 +50,7 @@ const StickyHeader = ({ type }) => {
                     }`}
               
             >
-                <div className="container header-container lg:max-w-[1289px] mx-auto py-1 md:py-1 px-4 md:px-6 flex items-center justify-between">
+                <div className="container header-container lg:max-w-[1440px] mx-auto py-1 md:py-1 px-4 md:px-6 flex items-center justify-between">
                     <div className="lg:hidden">
                         <button className="w-[30px] text-gray-600 hover:text-gray-800" onClick={toggleMenu}>
                             {isMenuOpen ? <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,9 +80,9 @@ const StickyHeader = ({ type }) => {
                             <Image
                                 src="/logo.png"
                                 alt=" Logo"
-                                width={147}
+                                width={176}
 
-                                height={40}
+                                height={46}
                                 priority
                             /></Link>
                     </div>
@@ -99,7 +99,7 @@ const StickyHeader = ({ type }) => {
                             <Link onClick={() => {
                                 setIsMenuOpen(false)
                             }} href="/#faq" className={`text-[#4D4D4D] hover:text-[#55B25B]`}>{localization.header.faq}</Link>
-                            <div className={` group relative z-50 flex items-center justify-center  text-[#4D4D4D] hover:text-[#55B25B]`}>
+                            {/* <div className={` group relative z-50 flex items-center justify-center  text-[#4D4D4D] hover:text-[#55B25B]`}>
                                 {localization.header.universities}
                             <FaChevronDown className='ml-[5px]' size={14} />
                                 <div className='hidden group-hover:block overflow-y-auto  text-[#4D4D4D] min-w-[216px] absolute  z-50 top-[0] bg-white rounded-lg border border-solid border-[rgba(85, 178, 91, 0.50)] shadow-md'>
@@ -116,11 +116,11 @@ const StickyHeader = ({ type }) => {
                                             ))}
                                         </div>
                                     </div>
-                                    {/* <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
+                                    <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
                                         All countries <FaArrowRight size={12} className='text-[#55B25B] ml-[5px]' />
-                                    </div> */}
+                                    </div> 
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <Link onClick={() => {
                                 setIsMenuOpen(false)
                             }} href="/#review" className={`text-[#4D4D4D] hover:text-[#55B25B]`}>{localization.header.reviews}</Link> */}
@@ -139,11 +139,11 @@ const StickyHeader = ({ type }) => {
                             </div>
                         </div>
 
-                        <div className={`hidden lg:flex space-x-[27px] `}>
-                            <Link  href="/#aboutus" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.aboutus}</Link>
-                            <Link href="#start" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.serivses}</Link>
-                            <Link href="/#faq" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B] ' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.faq}</Link>
-                            <div className={` group relative z-50 flex items-center justify-center py-[30px] ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.universities}<FaChevronDown className='ml-[5px]' size={14} />
+                        <div className={`hidden lg:flex space-x-[40px] mx-[80px] `}>
+                            <Link  href="/#aboutus" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.aboutus}</Link>
+                            <Link href="#start" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.serivses}</Link>
+                            <Link href="/#faq" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B] ' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.faq}</Link>
+                            {/* <div className={` group relative z-50 flex items-center justify-center py-[30px] ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.universities}<FaChevronDown className='ml-[5px]' size={14} />
                                 <div className='hidden group-hover:block  text-[#4D4D4D] min-w-[216px] absolute  z-50 top-[80px] bg-white rounded-lg border border-solid border-[rgba(85, 178, 91, 0.50)] shadow-md'>
                                     <div className='px-[20px] py-[17px]'>
                                         <h3 className="text-gray-700 font-inter font-semibold text-base leading-5">                                    {localization.header.popular}
@@ -156,35 +156,44 @@ const StickyHeader = ({ type }) => {
                                             ))}
 </div>
                                     </div>
-                                    {/* <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
+                                    <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
                                         All countries <FaArrowRight size={12} className='text-[#55B25B] ml-[5px]' />
-                                    </div> */}
+                                    </div> 
                             </div>
-                            </div>
+                            </div> */}
                             
-                            {/* <Link href="/#review" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.reviews}</Link> */}
-                            <Link href="/contacts" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#fff] hover:text-[#4D4D4D]'}`}>{localization.header.contacts}</Link>
+                      
+                            <Link href="/contacts" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.contacts}</Link>
+                            <Link href="/contacts" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.add_service}</Link>
                         </div>
-                        <div className='w-[49px] bg-[#fff] border border-solid border-green-500 rounded-[10px] px-[6px] pb-[6px] pt-[3px]  md:mr-[30px] md:ml-[86px] flex flex-col text-center gap-[5px]'
+                    
+                        <Link
+                            href="/#yourdream"
+                            className="hidden lg:flex items-center justify-center  bg-[#fff] border-none border-[#AB8A4C] rounded-[50px] px-[25px]   h-[45px] font-[500] text-[#0B132A] "
                         >
-                        
+                            {localization.header.for_home}
+
+
+                        </Link>
+                        <Link
+                            href="/#yourdream"
+                            className="hidden lg:flex items-center justify-center  bg-[#fff] border font-[500] border-[#AB8A4C] rounded-[50px] px-[25px]   h-[45px] text-[#AB8A4C] "
+                        >
+                            {localization.header.for_business}
+                        </Link>
+                        <div className='w-[49px] bg-[#fff] border border-solid border-[#AB8A4C] rounded-[10px] px-[6px] pb-[6px] pt-[3px]   md:ml-[20px] flex flex-col text-center gap-[5px]'
+                        >
+
                             <div onClick={() => setIsLang(!isLang)} className='flex items-center gap-[6px]'><Image src={`/${lang}.png`} alt='flag' width={19} height={19} /><FaChevronDown color='55B25B' /></div>
-                            {isLang && langs ? langs.filter(el => el != lang).map((item, index) => (                                <div key={index} onClick={(e) => {
-                                    dispatch(changeLanguage({ type: item }))
-                                    setIsLang(false)
-                                }}><Image src={`/${item}.png`} alt='flag' width={19} height={19} /></div>
+                            {isLang && langs ? langs.filter(el => el != lang).map((item, index) => (<div key={index} onClick={(e) => {
+                                dispatch(changeLanguage({ type: item }))
+                                setIsLang(false)
+                            }}><Image src={`/${item}.png`} alt='flag' width={19} height={19} /></div>
 
                             ))
                                 : null}
 
                         </div>
-                        <Link
-                            href="/#yourdream"
-                            className="hidden lg:flex items-center justify-center  bg-green-500 border border-white rounded-[15px] px-[8px]  h-[54px] text-white "
-                        >
-                            {localization.apply_university}
-
-                        </Link>
                     </div>
                 </div>
 

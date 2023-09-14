@@ -1,6 +1,4 @@
 "use client"
-import Intro from "@/components/sections/universities/Intro"
-import UniversityLists from "@/components/sections/universities/UniversityLists";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { data } from "@/universityData";
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +13,6 @@ const filteredData = data[lang].find((item) => item?.id == params?.univer_id);
 
  return (
     <div className="mt-[85px]">
-       <Intro data={filteredData} />
        {/* <UniversityLists data={filteredData} /> */}
        {/* <div className="container mx-auto mb-[100px] flex items-center justify-between">
           <button className="block md:hidden rounded-lg  text-[#55B25B]  py-[10px] px-[25px] font-[600]">
