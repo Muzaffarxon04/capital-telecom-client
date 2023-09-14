@@ -1,37 +1,49 @@
 import { FaUser, FaLocationArrow, FaServer } from "react-icons/fa"
 
 
+const data = [
+    {
+        title: "Users",
+        count: "90+",
+        icon:FaUser
+    },
+    {
+        title: "Users",
+        count: "90+",
+        icon: FaLocationArrow
 
-export default function ReviewCard({ item }) {
+    },
+    {
+        title: "Users",
+        count: "90+",
+        icon: FaServer
+
+    },
+    {
+        title: "Users",
+        count: "90+",
+        icon: FaServer
+
+    },
+]
+
+
+export default function ReviewCard() {
     return (
-        <div className="max-w-[1140px] w-full mx-auto border py-[37px] mt-[150px] rounded-[10px] bg-[#fff] flex justify-between items-center">
-            <div className="flex items-center px-[90px] border-r-2 border-[#EEEFF2]">
-                <div className="bg-[#FFF0D5] mr-[35px] rounded-full w-[55px] h-[55px] flex items-center justify-center text-[#AB8A4C]">
-                    <FaUser size={23}/>
-                </div>
-                <div>
-                    <h3 className="text-[#0B132A] font-[700] text-[25px]  mb-[5px]">90+</h3>
-                    <h4 className="text-[20px] text-[#4F5665]">Users</h4>
-               </div>
+        <div className="px-[20px] md:px-0">
+            <div className="container lg:h-[200px]  mx-auto  md:py-[37px] md:mt-[150px] rounded-[10px] bg-[#fff] flex flex-wrap justify-center md:justify-between items-center shadow-[0px_50px_25px_0px_rgba(13,16,37,0.05)]   md:[&>*:nth-child(3)]:border-b-0   md:[&>*:last-child]:border-0 ">
+                {data && data.map((item, index) => (<>
+                    <div key={index} className="flex h-[125px] items-center py-[60px] px-[49px] md:px-[90px] lg:px-[40px] border-b-2 lg:border-r-2 lg:border-b-0 border-[#EEEFF2]">
+                        <div className="bg-[#FFF0D5] mr-[35px] rounded-full w-[55px] h-[55px] flex items-center justify-center text-[#AB8A4C]">
+                            <item.icon size={23} />
+                        </div>
+                        <div>
+                            <h3 className="text-[#0B132A] font-[700] text-[25px]  mb-[5px]">90+</h3>
+                            <h4 className="text-[20px] text-[#4F5665]">Users</h4>
+                        </div>
+                    </div>
+                </>))}
             </div>
-            <div className="flex items-center  px-[90px]  border-r-2 border-[#EEEFF2]">
-                <div className="bg-[#FFF0D5] mr-[35px] rounded-full w-[55px] h-[55px] flex items-center justify-center text-[#AB8A4C]">
-                    <FaLocationArrow size={23} />
-                </div>
-                <div>
-                    <h3 className=" text-[#0B132A] font-[700] text-[25px]  mb-[5px]">30+</h3>
-                    <h4 className="text-[20px] text-[#4F5665]">Locations</h4>
-              </div>
-            </div>
-            <div className="flex items-center  px-[90px] ">
-                <div className="bg-[#FFF0D5] mr-[35px] rounded-full w-[55px] h-[55px] flex items-center justify-center text-[#AB8A4C]">
-                    <FaServer size={23} />
-                </div>
-                <div>
-                    <h3 className="text-[#0B132A] font-[700] text-[25px] mb-[5px]">50+</h3>
-                    <h4 className="text-[20px] text-[#4F5665]">Servers</h4>
-               </div>
-            </div>
-        </div>
+    </div>
     )
 }

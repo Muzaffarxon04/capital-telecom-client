@@ -5,7 +5,6 @@ import { FaBars, FaChevronDown, FaArrowRight } from 'react-icons/fa';
 import { changeLanguage } from '@/slices/localizationReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
-import { data } from '@/universityData';
 
 const StickyHeader = ({ type }) => {
  

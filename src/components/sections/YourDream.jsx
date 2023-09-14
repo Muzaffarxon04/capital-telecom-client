@@ -41,7 +41,7 @@ export default function YourDream() {
    }
 
    return (
-      <section className=" pb-[100px]">
+      <section className="pt-[50px] md:pt-[90px] pb-[50px] md:pb-[100px]">
          <div className="container mx-auto px-[10px]">
             <h2 className="text-[#0B132A] text-center  font-[500] md:font-[500] text-[54px] max-w-[900px] mx-auto mb-[20px] md:mb-[20px]">
                {localization.dream.title}
@@ -55,7 +55,7 @@ export default function YourDream() {
                <div className="relative  w-full  lg:w-[300px]">
                   <label
                      htmlFor="name"
-                     className="text-[#55B25B] font-inter font-semibold text-xs uppercase mb-[7px] leading-[1.66667] tracking-[0.96px]">
+                     className="text-[#AB8A4C] font-inter font-semibold text-xs uppercase mb-[7px] leading-[1.66667] tracking-[0.96px]">
                      {localization.dream.name}
                   </label>
                   <input
@@ -70,12 +70,12 @@ export default function YourDream() {
                <div className="relative   w-full lg:w-auto">
                   <label
                      htmlFor="phone"
-                     className="text-[#55B25B] font-inter font-semibold text-xs uppercase mb-[7px] leading-[1.66667] tracking-[0.96px]">
+                     className="text-[#AB8A4C] font-inter font-semibold text-xs uppercase mb-[7px] leading-[1.66667] tracking-[0.96px]">
                      {localization.dream.number}
                   </label>
                   <>
                      <PhoneInput
-                        containerClass="flex items-center  border border-[#55B25B] bg-white rounded-[15px] h-[64px] w-full focus-within:border-green-500"
+                        containerClass="flex items-center  border border-[#AB8A4C] bg-white rounded-[15px] h-[64px] w-full focus-within:border-green-500"
                         inputClass=" w-full focus:outline-none border-0 w-full"
                         buttonStyle={{ display: "none" }}
                         inputStyle={{
@@ -99,7 +99,7 @@ export default function YourDream() {
                      }
                   }}
                   type="button"
-                  className="disabled:opacity-[0.6] mt-[15px] h-[46px] w-[204px] border border-[#55B25B] bg-[#55B25B] text-white rounded-[16px] px-13 py-3  font-inter font-semibold text-base tracking-wide uppercase transition duration-300 hover:bg-white hover:text-[#55B25B] focus:outline-none">
+                  className="disabled:opacity-[0.6] mt-[15px] h-[46px] w-[204px] border border-[#AB8A4C] bg-[#AB8A4C] text-white rounded-[16px] px-13 py-3  font-inter font-semibold text-base tracking-wide uppercase transition duration-300 hover:bg-white hover:text-[#AB8A4C] focus:outline-none">
                   {localization.dream.send}
                </button>
             </div>

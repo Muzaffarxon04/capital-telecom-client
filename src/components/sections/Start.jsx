@@ -107,7 +107,7 @@ export default function YourDream() {
 
 
     return (
-        <section className="">
+        <section>
             <div className="container mx-auto px-[10px] element-box">
                 <h2 className="text-[#0B132A] text-center  font-[500] md:font-[500] text-[54px]  max-w-[900px] mx-auto mb-[20px] md:mb-[20px]">
 
@@ -135,7 +135,7 @@ export default function YourDream() {
                     slidesPerView={1}>
                     {data.map((item, index) => (<>
                                 <SwiperSlide key={index} className={`bg-[#fff] `} >
-                                    <div className='px-[70px]'>
+                                    <div className='md:px-[70px]'>
                                         {item.map((el, index) => (<>
                                             <TariffsCard key={index} item={el} />
                                         </>))}
@@ -145,7 +145,7 @@ export default function YourDream() {
                         
 
                         </Swiper>
-                <div className="flex justify-end items-center mt-[60px]">
+                <div className="flex justify-between  md:justify-end items-center mt-[60px]">
                     <button className="custom-prev-button mr-[20px]   h-[60px] w-[60px] bg-[#fff] border-[2px] border-[#AB8A4C] rounded-full flex items-center justify-center text-[#AB8A4C]">
                         <FaArrowLeft size={25} />
                     </button>

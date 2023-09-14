@@ -125,7 +125,6 @@ margin-top: 0 !important;
 
 .bg-intro{
   background: url("/intro-bg.png")  no-repeat  ;
-background-size: 611px  382px;
 background-position: top right;
 }
 
@@ -138,6 +137,18 @@ background-position: top right;
 .swiper-pagination-bullets{
 transform: translateY(110px) translateX(-44%) !important ;
 position: absolute !important;
+}
+
+@media only screen and (max-width:1030px) {
+  .swiper-pagination-bullets {
+    transform: translateY(110px) translateX(-40%) !important;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .swiper-pagination-bullets {
+      transform: translateY(110px) translateX(0) !important;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -171,6 +182,8 @@ position: absolute !important;
 .header-container{
   overflow: visible !important;
 }
+
+
 
 .bg-university-intro{
   background: url('/black-shape.png'), url('/university.png'), #2E2E2E;

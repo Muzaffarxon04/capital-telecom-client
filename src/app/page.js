@@ -2,18 +2,14 @@
 
 import StickyHeader from "@/components/header/Header";
 import IntroSection from "@/components/sections/Intro";
-import AboutSection from "@/components/sections/About";
 import StartSection from "@/components/sections/Start";
-import FaqSection from "@/components/sections/Faq";
+import Features from "@/components/sections/Fatures";
 import YourDreamSection from "@/components/sections/YourDream";
-import OurPartnersSection from "@/components/sections/OurPartners";
-import OurClientsSection from "@/components/sections/OurClients";
-import OurStudentsSection from "@/components/sections/OurStudents";
+
 
 const HomePage = () => {
    return (
       <div className="flex flex-col ">
-         {/* bg-mountain-background */}
          <div
             className="
          bg-[#fff]
@@ -21,17 +17,17 @@ const HomePage = () => {
             <StickyHeader />
             <IntroSection />
          </div>
-         {/* <div
-            id="aboutus"
-            className="bg-about-background bg-cover bg-center  flex flex-col">
-            <AboutSection />
-         </div>
-         <div className="bg-students-background bg-cover">
+         {/* <div className="bg-students-background bg-cover">
          <OurStudentsSection />
       </div> */}
-      <div id="start" className="bg-[#fff]">
-         <StartSection />
-      </div>
+         <div id="start" className="bg-[#fff]">
+            <StartSection />
+         </div>
+         <div
+            id="features"
+            className="bg-gradient-to-b from-gray-200 to-transparent mt-[180px] md:mt-[239px]">
+            <Features />
+         </div>
          {/* <div
             id="review"
             className="bg-clients-background bg-cover bg-[lightgray]  bg-center">
