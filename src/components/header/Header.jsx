@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaBars, FaChevronDown, FaArrowRight } from 'react-icons/fa';
+import {  FaChevronDown } from 'react-icons/fa';
 import { changeLanguage } from '@/slices/localizationReducer';
+import { changeStatus } from '@/slices/statusReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
 
 const StickyHeader = ({ type }) => {
+  
     const dispatch = useDispatch();
-    const statusLocal = JSON?.parse(localStorage.getItem("status")) || false
-    const [status, setStatus] = useState(statusLocal || false);
-
-    useEffect(() => {
-        localStorage.setItem("status", JSON.stringify(status))
-    }, [status])
-
+  
 
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isLang, setIsLang] = useState(false);
     // const dispatch = useDispatch();
+    const { status } = useSelector((state) => state.status);
 
     const { lang } = useSelector((state) => state.localiztion);
     const { localization } = Content[lang];
@@ -121,18 +118,19 @@ const StickyHeader = ({ type }) => {
                             </div>
                         </div>
 
-                        <div className={`hidden lg:flex space-x-[${lang == "ru" ? "25px" : "30px"}] mx-[80px] lg:mx-[${lang == "ru" ? "20px" : "80px"}] `}>
-
+                        <div className={`hidden lg:flex mx-[80px] lg:mx-[${lang == "ru" ? "20px" : "80px"}] ${lang == "ru" ? "space-x-[15px]" : "space-x-[30px]"}`}>
                             <Link href="#start" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.serivses}</Link>
                             <Link href="/#conected" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B] ' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.faq}</Link>
 
                             <Link href="/#contact" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.contacts}</Link>
-                            <Link href="/additional-services" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.add_service}</Link>
+                            <Link href="/additionalservices" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.add_service}</Link>
                         </div>
 
                         <button
                             onClick={() => {
-                                setStatus("home")
+                    
+                                dispatch(changeStatus({ type: "home" }))
+
                             }}
                             className={`hidden md:flex items-center justify-center bg-[#fff] border rounded-[50px] px-[25px]   h-[45px] font-[500] ${status == "home" ? " border-[#AB8A4C] text-[#AB8A4C]" : "border-transparent  text-[#0B132A]"}`}
                         >
@@ -142,7 +140,9 @@ const StickyHeader = ({ type }) => {
                         </button>
                         <button
                             onClick={() => {
-                                setStatus("ofice")
+                             
+                                dispatch(changeStatus({ type: "ofice" }))
+
                             }}
                             className={`hidden md:flex items-center justify-center  bg-[#fff]  font-[500] border rounded-[50px] px-[25px]   h-[45px]   ${status == "ofice" ? " border-[#AB8A4C] text-[#AB8A4C]" : "border-transparent  text-[#0B132A]"}`}
                         >

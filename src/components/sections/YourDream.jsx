@@ -1,5 +1,4 @@
-import { changeLanguage } from "@/slices/localizationReducer";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import Content from "@/Localization/Content";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";

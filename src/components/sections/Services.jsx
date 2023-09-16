@@ -1,7 +1,6 @@
 import TariffsCard from './ServicesCard';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
-import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, } from 'swiper/modules';

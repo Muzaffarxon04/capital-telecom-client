@@ -7,7 +7,7 @@ const cartSlice = createSlice({
    },
 
    reducers: {
-      changeLanguage(state, action) {
+      changeStatus(state, action) {
          switch (action.payload.type) {
             case "home":
                return { ...state, status: "home" };
@@ -20,7 +20,7 @@ const cartSlice = createSlice({
    },
 });
 
-export const { changeLanguage } = cartSlice.actions;
+export const { changeStatus } = cartSlice.actions;
 export default cartSlice.reducer;
 
 ///My Code

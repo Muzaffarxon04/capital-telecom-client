@@ -1,13 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FaInstagram, FaFacebook, FaLinkedin, FaTelegram } from "react-icons/fa"
-import { useDispatch, useSelector } from 'react-redux';
-import Content from "@/Localization/Content";
+import { FaInstagram, FaFacebook, FaTelegram } from "react-icons/fa"
+
 
 export default function Footer() {
-    const { lang } = useSelector((state) => state.localiztion);
 
-    const { localization } = Content[lang];
 
 
     return (
