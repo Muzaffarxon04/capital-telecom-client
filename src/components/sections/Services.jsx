@@ -1,4 +1,4 @@
-import TariffsCard from './TariffsCard';
+import TariffsCard from './ServicesCard';
 import { useDispatch, useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
 import { useState } from 'react';
@@ -11,75 +11,107 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-
 const data = [
     [
         {
-            tarif: "ECONOM+",
+            img:"/img6.png",
+            tarif: "Calling the wizard",
             price: "119 000",
-            daytime_speed: "200",
-            night_speed: "100",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
         },
         {
-            tarif: "COMFORT+",
-            price: "229 000",
-            daytime_speed: "300",
-            night_speed: "600",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+            img:"/img5.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
         },
         {
-            tarif: "PRO+",
+            img:"/img4.png",
+            tarif: "Calling the wizard",
             price: "309 000",
-            daytime_speed: "400",
-            night_speed: "700",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+
+        },
+       {
+        img:"/img3.png",
+            tarif: "Calling the wizard",
+            price: "119 000",
+        },
+        {
+            img:"/img2.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
+        },
+        {
+            img:"/img1.png",
+            tarif: "Calling the wizard",
+            price: "309 000",
+
         }
     ],
     [
         {
-            tarif: "ECONOM+",
+            img: "/img6.png",
+            tarif: "Calling the wizard",
             price: "119 000",
-            daytime_speed: "200",
-            night_speed: "100",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
         },
         {
-            tarif: "COMFORT+",
-            price: "229 000",
-            daytime_speed: "300",
-            night_speed: "600",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+            img: "/img5.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
         },
         {
-            tarif: "PRO+",
+            img: "/img4.png",
+            tarif: "Calling the wizard",
             price: "309 000",
-            daytime_speed: "400",
-            night_speed: "700",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+
+        },
+        {
+            img: "/img3.png",
+            tarif: "Calling the wizard",
+            price: "119 000",
+        },
+        {
+            img: "/img2.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
+        },
+        {
+            img: "/img1.png",
+            tarif: "Calling the wizard",
+            price: "309 000",
+
         }
     ],
     [
         {
-            tarif: "ECONOM+",
+            img:"/img6.png",
+            tarif: "Calling the wizard",
             price: "119 000",
-            daytime_speed: "200",
-            night_speed: "100",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
         },
         {
-            tarif: "COMFORT+",
-            price: "229 000",
-            daytime_speed: "300",
-            night_speed: "600",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+            img:"/img5.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
         },
         {
-            tarif: "PRO+",
+            img:"/img4.png",
+            tarif: "Calling the wizard",
             price: "309 000",
-            daytime_speed: "400",
-            night_speed: "700",
-            bonuses: ["Unlimited traffic", "200*Mbps in TAS-IX"]
+
+        },
+       {
+        img:"/img3.png",
+            tarif: "Calling the wizard",
+            price: "119 000",
+        },
+        {
+            img:"/img2.png",
+            tarif: "Calling the wizard",
+            price: "15 000",
+        },
+        {
+            img:"/img1.png",
+            tarif: "Calling the wizard",
+            price: "309 000",
+
         }
     ],
 ]
@@ -99,7 +131,7 @@ const renderCustomNextButton = () => (
 );
 
 
-export default function YourDream() {
+export default function Services() {
 
     const { lang } = useSelector((state) => state.localiztion);
 
@@ -108,18 +140,14 @@ export default function YourDream() {
 
 
     return (
-        <section id="start" className='pt-[100px]'>
-        
-            <div className="container mx-auto px-[10px] element-box">
-                <h2 className="text-[#0B132A] text-center  font-[500] md:font-[500] text-[54px]  max-w-[900px] mx-auto mb-[20px] md:mb-[20px]">
+        <section>
+            <div className="container mx-auto px-[10px] pb-[50px] element-box">
+                <h2 className="text-[#0B132A] text-center  font-[500] md:font-[500] text-[54px]  max-w-[900px] mx-auto">
 
-                    {localization.dream.title}
+                    {localization.header.add_service}
 
                 </h2>
 
-                <p className='text-center text-[#4F5665] max-w-[730px] mx-auto  font-[400] text-[24px]'>
-                    {localization.dream.subtitle}
-                </p>
            
                         <Swiper className="  flex justify-center items-center " loop={true}
                     navigation={{
@@ -136,10 +164,10 @@ export default function YourDream() {
             }}
                     slidesPerView={1}>
                     {data.map((item, index) => (<>
-                                <SwiperSlide key={index} className={`bg-[#fff] `} >
-                                    <div className='md:px-[70px]'>
+                                <SwiperSlide key={index} >
+                            <div className=' items-center justify-center md:justify-between lg:justify-center h-auto  flex flex-wrap lg:[&>*:nth-child(2n)]:mx-[70px]'>
                                         {item.map((el, index) => (<>
-                                            <TariffsCard localization={localization} key={index} item={el} lang={lang} />
+                                            <TariffsCard localization={localization} key={index} item={el} />
                                         </>))}
                                     </div>
                                 </SwiperSlide>

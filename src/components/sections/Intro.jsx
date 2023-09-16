@@ -1,7 +1,6 @@
 import {  useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
 import Link from 'next/link';
-import ReviewCard from './ReviewCard';
 import Image from 'next/image';
 
 const IntroSection = () => {
@@ -13,14 +12,14 @@ const IntroSection = () => {
         <section className=" text-white pt-[110px] md:pt-[170px] px-[15px]  pb-[100px] md:px-0">
             <div className="container bg-cover mx-auto flex-col-reverse lg:flex-row  md:pl-[20px] pb-[90px] flex justify-center  md:justify-between">
                 <div>
-                    <div className='lg:max-w-[606px] mt-[50px] md:mt-[20px] lg:mt-0 text-center'>
+                    <div className='lg:max-w-[606px] mt-[50px] md:mt-[20px] lg:mt-0 text-center lg:text-left'>
                         <h1 className="text-[38px] text-[#0B132A] md:text-[50px] font-[500] ">
-                            {localization?.intro?.title} <b className='font-[700]'> Capital Telecom.</b>
+                            {localization?.intro?.title} <b className='font-[700]'> Capital Telecom </b> {localization?.intro?.bunda} 
                         </h1>
                         <p className=" text-[16px]  pt-[20px] text-[#4F5665]">
-                            {localization?.intro?.bunda}
+                            {localization?.intro?.subtitle}
                             <b className='font-[500]'>Capital Telecom</b>
-                            {localization?.intro?.subtitle}</p>
+                            {localization?.intro?.subtitle2}</p>
                     </div>
                     <div className="flex justify-center lg:justify-start items-center md:flex-row flex-col mt-[50px] 
                 md:space-x-[50px] space-y-[50px] md:space-y-0">
@@ -40,7 +39,6 @@ const IntroSection = () => {
                     <Image src="/intro-bg.png" alt="image" width={600} height={382}/>
                 </div>
             </div>
-            <ReviewCard/>
         </section>
     );
 };

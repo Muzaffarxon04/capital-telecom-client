@@ -7,14 +7,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import Content from "@/Localization/Content";
 
 const StickyHeader = ({ type }) => {
- 
+    const dispatch = useDispatch();
+    const statusLocal = JSON?.parse(localStorage.getItem("status")) || false
+    const [status, setStatus] = useState(statusLocal || false);
+
+    useEffect(() => {
+        localStorage.setItem("status", JSON.stringify(status))
+    }, [status])
+
+
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isLang, setIsLang] = useState(false);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const { lang } = useSelector((state) => state.localiztion);
-
     const { localization } = Content[lang];
 
     const toggleMenu = () => {
@@ -45,9 +53,9 @@ const StickyHeader = ({ type }) => {
     return (
         <>
             <header
-                className={`fixed w-full h-[88px]  top-0 z-50 py-[17px] lg:py-[17px]  flex items-center justify-between ${type || scrolled ? 'scrolled-header bg-white shadow-mds' : 'lg:bg-[transparent]  bg-white '
+                className={`fixed w-full h-[88px]  top-0 z-50 py-[17px] lg:py-[17px]  flex items-center justify-between ${type || scrolled ? 'scrolled-header bg-[#fff] shadow-mds' : 'lg:bg-[#fff]  bg-[#fff] '
                     }`}
-              
+
             >
                 <div className="container header-container lg:max-w-[1440px] mx-auto py-1 md:py-1 px-4 md:px-6 flex items-center justify-between">
                     <div className="lg:hidden">
@@ -70,8 +78,8 @@ const StickyHeader = ({ type }) => {
                                 </defs>
                             </svg>
 
-}
-                            
+                            }
+
                         </button>
                     </div>
                     <div className="text-lg md:text-xl font-semibold">
@@ -87,7 +95,6 @@ const StickyHeader = ({ type }) => {
                     </div>
 
                     <div className='flex items-center  '>
-
                         <div className={`absolute  w-full mb-[50px] overflow-y-auto  left-0 top-[86px] shadow-md bg-white flex lg:hidden text-center text-[28px] font-[700] pt-[90px]  space-y-[50px]  ${isMenuOpen ? ' h-[95vh] pb-[70px] flex flex-col' : 'hidden'}`}>
                             <Link onClick={() => {
                                 setIsMenuOpen(false)
@@ -98,39 +105,15 @@ const StickyHeader = ({ type }) => {
                             <Link onClick={() => {
                                 setIsMenuOpen(false)
                             }} href="/#faq" className={`text-[#4D4D4D] hover:text-[#55B25B]`}>{localization.header.faq}</Link>
-                            {/* <div className={` group relative z-50 flex items-center justify-center  text-[#4D4D4D] hover:text-[#55B25B]`}>
-                                {localization.header.universities}
-                            <FaChevronDown className='ml-[5px]' size={14} />
-                                <div className='hidden group-hover:block overflow-y-auto  text-[#4D4D4D] min-w-[216px] absolute  z-50 top-[0] bg-white rounded-lg border border-solid border-[rgba(85, 178, 91, 0.50)] shadow-md'>
-                                    <div className='px-[20px] py-[17px]'>
-                                        <h3 className="text-[#4D4D4D] font-inter font-[600] text-[16px] leading-5">                                    {localization.header.popular}
-                                        </h3>
-                                        <div className='flex flex-col gap-[20px] mt-[20px]'>
-                                            {data && data[lang || "uz"].map((item, index) => (
-                                                <Link onClick={() => {
-                                                    setIsMenuOpen(false)
-                                                }} className='text-[#4D4D4D] text-[16px] font-[400]' href={`/${item.id}`} key={item.id}>
-                                                    {item.country}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
-                                        All countries <FaArrowRight size={12} className='text-[#55B25B] ml-[5px]' />
-                                    </div> 
-                                </div>
-                            </div> */}
-                            {/* <Link onClick={() => {
-                                setIsMenuOpen(false)
-                            }} href="/#review" className={`text-[#4D4D4D] hover:text-[#55B25B]`}>{localization.header.reviews}</Link> */}
+
                             <Link onClick={() => {
                                 setIsMenuOpen(false)
-                            }} href="/contacts" className={`text-[#4D4D4D] hover:text-[#55B25B] `}>{localization.header.contacts}</Link>
+                            }} href="/additional-services" className={`text-[#4D4D4D] hover:text-[#55B25B] `}>{localization.header.add_service}</Link>
                             <div className='flex items-center justify-center'>
                                 <button
                                     onClick={() => {
                                         setIsMenuOpen(false)
-                                    }} 
+                                    }}
                                     className="lg:hidden inline-block bg-green-500  border-white border-[1px] rounded-[10px] p-[15px] text-white"
                                 >
                                     {localization.apply_university}
@@ -138,48 +121,33 @@ const StickyHeader = ({ type }) => {
                             </div>
                         </div>
 
-                        <div className={`hidden lg:flex space-x-[40px] mx-[80px] `}>
-                            <Link  href="/#aboutus" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.aboutus}</Link>
+                        <div className={`hidden lg:flex space-x-[${lang == "ru" ? "25px" : "30px"}] mx-[80px] lg:mx-[${lang == "ru" ? "20px" : "80px"}] `}>
+
                             <Link href="#start" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.serivses}</Link>
-                            <Link href="/#faq" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B] ' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.faq}</Link>
-                            {/* <div className={` group relative z-50 flex items-center justify-center py-[30px] ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.universities}<FaChevronDown className='ml-[5px]' size={14} />
-                                <div className='hidden group-hover:block  text-[#4D4D4D] min-w-[216px] absolute  z-50 top-[80px] bg-white rounded-lg border border-solid border-[rgba(85, 178, 91, 0.50)] shadow-md'>
-                                    <div className='px-[20px] py-[17px]'>
-                                        <h3 className="text-gray-700 font-inter font-semibold text-base leading-5">                                    {localization.header.popular}
-</h3>   
-                                        <div className='flex flex-col gap-[20px] mt-[20px]'>
-                                            {data && data[lang || "uz"].map((item, index) => (
-                                                <Link className='hover:text-[#55B25B]' href={`/${item.id}`} key={index}>
-                                                    {item.country}
-                                                </Link>
-                                            ))}
-</div>
-                                    </div>
-                                    <div className='pt-[12px] pb-[15px] px-[20px] flex items-center border-t-[1px] border-[#55B25B80] border-solid font-[600]'>
-                                        All countries <FaArrowRight size={12} className='text-[#55B25B] ml-[5px]' />
-                                    </div> 
-                            </div>
-                            </div> */}
-                            
-                      
-                            <Link href="/contacts" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.contacts}</Link>
-                            <Link href="/contacts" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.add_service}</Link>
+                            <Link href="/#conected" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B] ' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.faq}</Link>
+
+                            <Link href="/#contact" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.contacts}</Link>
+                            <Link href="/additional-services" className={` flex items-center justify-center py-[30px]  ${type || scrolled ? 'text-[#4D4D4D] hover:text-[#55B25B]' : 'text-[#4F5665] hover:text-[#4D4D4D]'}`}>{localization.header.add_service}</Link>
                         </div>
-                    
-                        <Link
-                            href="/#yourdream"
-                            className="hidden lg:flex items-center justify-center  bg-[#fff] border-none border-[#AB8A4C] rounded-[50px] px-[25px]   h-[45px] font-[500] text-[#0B132A] "
+
+                        <button
+                            onClick={() => {
+                                setStatus("home")
+                            }}
+                            className={`hidden md:flex items-center justify-center bg-[#fff] border rounded-[50px] px-[25px]   h-[45px] font-[500] ${status == "home" ? " border-[#AB8A4C] text-[#AB8A4C]" : "border-transparent  text-[#0B132A]"}`}
                         >
                             {localization.header.for_home}
 
 
-                        </Link>
-                        <Link
-                            href="/#yourdream"
-                            className="hidden lg:flex items-center justify-center  bg-[#fff] border font-[500] border-[#AB8A4C] rounded-[50px] px-[25px]   h-[45px] text-[#AB8A4C] "
+                        </button>
+                        <button
+                            onClick={() => {
+                                setStatus("ofice")
+                            }}
+                            className={`hidden md:flex items-center justify-center  bg-[#fff]  font-[500] border rounded-[50px] px-[25px]   h-[45px]   ${status == "ofice" ? " border-[#AB8A4C] text-[#AB8A4C]" : "border-transparent  text-[#0B132A]"}`}
                         >
                             {localization.header.for_business}
-                        </Link>
+                        </button>
                         <div className='w-[49px] bg-[#fff] border border-solid border-[#AB8A4C] rounded-[10px] px-[6px] pb-[6px] pt-[3px]   md:ml-[20px] flex flex-col text-center gap-[5px]'
                         >
 

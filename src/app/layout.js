@@ -1,12 +1,13 @@
 "use client";
 import "./globals.css";
+import { useEffect, useState } from "react";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import { Inter } from "next/font/google";
 import Head from "next/head";
+import Content from "@/Localization/Content";
 import { Provider } from "react-redux";
-// import SSROutset from '@/slices/gate';
-// import { PersistGate } from "redux-persist/integration/react";
+import { changeLanguage } from "@/slices/statusReducer";
+
 import { persistor, store } from "src/slices/storeCart";
 import { usePathname } from "next/navigation";
 import {
@@ -16,29 +17,36 @@ import {
    SocialProfileJsonLd,
 } from "next-seo";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+   const statusLocal = JSON.parse(localStorage.getItem("status")) || false
+const [status, setStatus] = useState(statusLocal || false);
+
+   
+   
+   const { localization } = Content[store?.getState()?.localiztion.lang || "en"] || [];
+
+   
+
    const pathname = usePathname();
    return (
       <Provider store={store}>
          <html lang="en">
             <Head>
                <NextSeo
-                  title="Study abroad with COMPERA!"
-                  titleTemplate="Compera | %s"
+                  title="Capital Telecom"
+                  titleTemplate="Capital Telecom | %s"
                   additionalMetaTags={[
                      {
                         property: "dc:creator",
-                        content: "comperaconsult",
+                        content: "capitaltelecom",
                      },
                      {
                         name: "application-name",
-                        content: "Compera",
+                        content: "CapitalTelecom",
                      },
                   ]}
                />
-
                <CorporateContactJsonLd
                   url="https://comperaconsult.uz"
                   logo="https://comperaconsult.uz/_next/image?url=%2Flogo.png&w=256&q=75"
@@ -46,32 +54,13 @@ export default function RootLayout({ children }) {
                      {
                         telephone: "+998909282244",
                         contactType: "call centre",
-                        email: "info@compera.uz",
+                        email: "info@capitaltelecom.uz",
                         areaServed: "UZ",
                         availableLanguage: ["English", "Russian", "Uzbek"],
                      },
                   ]}
                />
-               <FAQPageJsonLd
-                  mainEntity={[
-                     {
-                        questionName: "What is the cost of Compera services?",
-                        acceptedAnswerText:
-                           "The cost of the full support package is 5,100,000 soums. Payment can be made in a convenient way for you on the basis of the contract.",
-                     },
-                     {
-                        questionName:
-                           "What are the costs for accommodation and meals?",
-                        acceptedAnswerText:
-                           "The cost of living and meals depends on the standard of living in the country where you plan to study. For example, in London, the capital of the UK, the average cost for accommodation, meals and other daily expenses is around £1,000 per month. In other cities in the UK, these costs amount to about 700 pounds per month.",
-                     },
-                     {
-                        questionName: "How many times a year can I apply?",
-                        acceptedAnswerText:
-                           "Universities usually accept applications twice a year: for the fall semester and for the spring/winter semester. In the UK, study programs start three times a year: in September, January and May.",
-                     },
-                  ]}
-               />
+               ]
                <SocialProfileJsonLd
                   type="Organization"
                   name="Compera"
@@ -82,28 +71,13 @@ export default function RootLayout({ children }) {
                <meta property="og:site_name" content="Compera" />
                <meta
                   name="keywords"
-                  content="compera, consulting, comperaconsulting,
-                     compera consulting uz,
-                     Compera uz,
-                     compera consult,
-                     compera consulting,
-                     chet elda o'qish,
-                     chet elda ta'lim,
-                     chet elda talim,
-                     учеба за границей,
-                     учеба за рубежом,
-                     учеба в европе,
-                     учеба в Германии,
-                     учеба в США,
-                     учеба в USA"
+                  content="capital, capital telecom, telecom, capitaltelecom, telecomcapital, capitaltelecomuz"
                />
-
                <meta
                   data-react-helmet="true"
                   name="description"
-                  content="Study abroad with COMPERA"
+                  content="Capital Telecom"
                />
-
                <link rel="shortcut icon" href="/favicon.ico" />
                <link rel="icon" href="/favicon.png" />
                <link
@@ -118,11 +92,39 @@ export default function RootLayout({ children }) {
                   sizes="16x16"
                   href="/favicon.png"
                />
-               <meta name="description" content={"Study abroad with COMPERA"} />
-               <meta name="title" content={"Compera"} />
-               <title>Study Abroad with COMPERA</title>
+               <meta name="description" content={"Capital Telecom"} />
+               <meta name="title" content={"Capital Telecom"} />
+               <title>Capital Telecom</title>
             </Head>
-            <body className={inter.className}>
+            {Boolean(statusLocal || status) ? null : (
+               <div className="overflow-hidden w-full h-full  top-0 left-0  z-[60] fixed flex justify-center items-center bg-[#ffffff7e]">
+                  <div className="flex text-center items-center flex-wrap justify-center font-[700] text-[22px] space-x-[62px]">
+                     <button
+                        onClick={() => {
+                          localStorage.setItem(
+                             "status",
+                             JSON.stringify("home"),
+                          );
+                           setStatus("home")
+                        }}
+                        className="  bg-[#AB8A4C] border  border-[#FFF] rounded-[20px] w-[300px]  h-[75px] text-[#FFF] shadow-[0px_25px_25px_0px_rgba(171,138,76,0.25)]">
+                        {localization.header.for_home}
+                     </button>
+                     <button
+                        onClick={() => {
+                           localStorage.setItem("status", 
+                              JSON.stringify("ofice"),
+                           );
+                           setStatus("ofice");
+
+                        }}
+                        className="  bg-[#fff] border font-[500] border-[#AB8A4C] rounded-[20px] w-[300px]   h-[75px] text-[#AB8A4C] shadow-[0px_25px_25px_0px_rgba(171,138,76,0.25)]">
+                        {localization.header.for_business}
+                     </button>
+                  </div>
+               </div>
+            )}
+            <body>
                {pathname !== "/" && <Header type={"layout"} />}
                <main>{children}</main>
                <Footer />

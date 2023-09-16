@@ -8,45 +8,45 @@ const header = {
       universities: "Universitetlar",
       reviews: "Sharhlar",
       contacts: "Kontaktlar",
-      add_service: "Additional services",
+      add_service: "Qo'shimcha Xizmatlar",
       popular: "Mashhur yo'nalishlar",
       sections: "Ofis uchun",
       for_home: "Uy Uchun",
-      for_business: "For Business",
+      for_business: "Biznes uchun",
       address: "Toshkent shahar Yashnobod tumani Qorasuv kochasi, 33A binosi",
    },
 
    intro: {
-      title: "Chet elda o'qish — sizning orzuyingizmi?",
-      bunda: "Bunda",
-      subtitle: " sizga yordam beradi! Hoziroq bepul konsultatsiyaga yoziling",
+      title: "",
+      bunda: "bilan hamma narsa oson bo'lishini xohlaysiz.",
+      subtitle2:
+         " dan foydalanib, barcha ehtiyojlaringiz uchun tarmoqni qulay va qiziqarli taqdim eting, bizdan qiziqarli xususiyatlarni kashf eting.",
+      subtitle: "",
       btn: "Ro‘yxatdan o‘tish",
       btn2: "Servis haqida",
    },
 
    about: {
-      title: "Biz kimmiz?",
-      text1: "Kompaniyamiz Buyuk Britaniya, AQSH, Avstraliya va Niderlandiyadagi nufuzli davlat universitetlari vakili. Biz talabalarga Kanada, Yangi Zelandiya, Birlashgan Arab Amirliklari, Germaniya, Singapur va Shveytsariyaning yetakchi universitetlariga kirishiga yordam beramiz. Bizning 8 yillik faoliyatimiz davomida 3000 dan ortiq talaba oliy kasbiy mahoratimiz va zamonaviy yondashuvimiz tufayli oliy o‘quv yurtlariga o‘qishga kirdi. Bizning mijozlarimiz dunyodagi eng elita universitetlari talabalari bo'lish imkoniyatiga ega.",
-      text: "Biz Compera kompaniyasida hamma sifatli ta'lim olish imkoniyatini ta'minlashga intilamiz. Biz sifatli ta'lim to'laqonli va muvaffaqiyatli hayotning asosi ekanligiga ishonamiz. Kompaniyamizda biz bajarilgan ish sifati va har bir mijozga individual yondashish tamoyiliga amal qilamiz.",
-      contact: "Kontakt ma'lumotlari",
+      title: "Foydalanuvchilar",
+      text1: "Joylashuvlar",
+      text: "Serverlar",
+      contact: "Noyob Tariflar",
    },
 
    start: {
-      title: "Qaerdan boshlashni bilmayapsizmi?",
-      text1: "Bizning saytimiz ensiklopediya bo'lib, sizga kirishning turli bosqichlarida harakat qilishingizga yordam beradi.",
-      text2: "Biroq, har bir holat o'ziga xosdir. Individual yordam uchun bizning ustozlarimizga bevosita murojaat qiling.",
-      text3: "Qabul qilish uchun mamlakatni tanlang",
-      text4: "Universitetni tanlang",
-      text5: "Chet elda o'qish haqida o'qing",
+      title: "Foydalanishingiz mumkin bo'lgan ko'plab xususiyatlarni taqdim etamiz",
+      text1: "Siz biz zavq bilan taqdim etadigan xususiyatlarni o'rganishingiz va har bir xususiyatning o'ziga xos funktsiyalariga ega bo'lishingiz mumkin.",
+      text2: "Kuchli onlayn himoya.",
+      text3: "Chegarasiz Internet.",
+      text4: "Kuchli VPN",
+      text5: "Muayyan vaqt cheklovlari yo'q.",
       text6: "Bepul maslahat oling",
    },
 
    students: {
-      title: " Talabalarimiz ",
-      title2: " qayerda ",
-      title3: " tahsil oladi",
-      subtitle:
-         "Bizning talabalarimiz mashhur Harvard universiteti, Yale universiteti, London Imperial College va boshqa ko‘plab jahon universitetlariga tahsil olishmoqda",
+      title: "Ulanish uchun so'rov qoldiring",
+      title2: "Iloji boricha tezroq siz bilan bog'lanamiz",
+      title3: "Biz bilan bog'laning",
    },
 
    clients: {
@@ -54,8 +54,11 @@ const header = {
    },
 
    partners: {
-      our: "Bizning",
-      title: " partnyorlar",
+      our: "dan",
+      title: "gacha",
+      select: "tanlash",
+      price: "so'm/oy",
+      mbit: "Mbit/s",
    },
 
    faq: {
@@ -65,8 +68,9 @@ const header = {
    },
 
    dream: {
-      title: " bilan orzuingizdagi universitetga kiring",
-      subtitle: "va o'z sohangizda yuqori maosh oluvchi mutaxassis bo'ling!",
+      title: "Rejangizni tanlang",
+      subtitle:
+         "Keling, siz uchun eng ma'qul bo'lgan paketni tanlaymiz va uni baxtli va quvnoq o'rganamiz.",
       subtitle2:
          "Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta ishlashga va Maxfiylik siyosatiga rozilik bildirasiz.",
       name: "Ism",

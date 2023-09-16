@@ -13,10 +13,10 @@ import {
 } from "redux-persist";
 
 import localizationReducers from "./localizationReducer";
-
+import statusReducer from "./statusReducer";
 const rootReducer = combineReducers({
    localiztion: localizationReducers,
-
+   status: statusReducer,
 });
 
 const createNoopStorage = () => {
